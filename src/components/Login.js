@@ -3,12 +3,39 @@ import React, { useState } from 'react';
 import './Login.css'; 
 import image from './login-image.jpg'
 
-function LoginForm({ Login, error }) {
-  const [details, setDetails] = useState({ name: '', email: '', password: '' });
 
-  const submitHandler = e => {
+export default function LoginForm({ Login, error }) {
+
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+
+  const submitHandler = (e) => {
     e.preventDefault();
-    Login(details);
+    
+    console.log(email,password)
+    fetch("http://localhost:3001/admin/login", {
+      method: "POST",
+      crossDomain: true,
+      headers: {
+        "Content-Type": "application/json",
+        Accept: "application/json",
+        "Access-Control-Allow-Origin": "*",
+      },
+      body: JSON.stringify({
+        email,
+        password,
+      }),
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        console.log(data, "userRegister");
+        if (data.message == "Admin successfully registered") {
+          alert("login successful");
+          window.localStorage.setItem("token", data.data);
+          window.localStorage.setItem("loggedIn", true);
+          window.location.href ="./home"
+        }
+      });
   };
 
   return (
@@ -28,8 +55,7 @@ function LoginForm({ Login, error }) {
             type="email"
             name="email"
             id="email"
-            onChange={e => setDetails({ ...details, email: e.target.value })}
-            value={details.email}
+            onChange={(e) => setEmail(e.target.value)}
           />
         </div>
 
@@ -39,8 +65,7 @@ function LoginForm({ Login, error }) {
             type="password"
             name="password"
             id="password"
-            onChange={e => setDetails({ ...details, password: e.target.value })}
-            value={details.password}
+            onChange={(e) => setPassword(e.target.value)}
           />
         </div>
 
@@ -55,4 +80,3 @@ function LoginForm({ Login, error }) {
 
 }
 
-export default LoginForm;

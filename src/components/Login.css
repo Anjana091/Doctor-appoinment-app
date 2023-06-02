@@ -9,7 +9,7 @@
   .login-image {
     width: 350px;
     height: 350px; 
-  
+    padding-right: 50px;
     
   }
   
@@ -18,7 +18,8 @@
     height:310px ;
     padding: 20px;
     background-color: white;
-    border: 2px solid #4caaaf
+    border: 2px solid #4caaaf;
+    border-radius: 10px;
   }
   
   h2 {
@@ -40,20 +41,24 @@
   
   input[type='email'],
   input[type='password'] {
-    width: 100%;
+    width: 90%;
     padding: 8px;
     border-radius: 5px;
     border: 1px solid #4caaaf
   }
   
   input[type='submit'] {
-    width: 100%;
+    width: 50%;
+    margin-left: 25%;
+    margin-top: 30px;
     padding: 8px;
     background-color: #4caaaf;
     color: white;
     font-weight: bold;
     cursor: pointer;
-    border: 1px solid #4caaaf
+    border: 1px solid #4caaaf;
+    border-radius: 5px;
+
   }
  
 .quote-container {
@@ -72,5 +77,22 @@
   font-size: 35px;
   font-weight: bold;
 }
-
+@media (max-width: 760px) {
+  .login-image {
+    width: 350px;
+    height: 350px; 
+    padding-bottom: 20px;
+    padding-right: 0px;
+  }
+  .quote-container{
+   visibility: hidden;
+  }
+  .login-form {
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    border-radius: 0px;
+    padding: 0;
+  }
+}
   
