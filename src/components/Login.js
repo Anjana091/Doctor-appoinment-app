@@ -29,7 +29,7 @@ export default function LoginForm({ Login, error }) {
       .then((res) => res.json())
       .then((data) => {
         console.log(data, "userRegister");
-        if (data.message == "Admin successfully registered") {
+        if (data.message === "Admin successfully registered") {
           alert("login successful");
           window.localStorage.setItem("token", data.data.token);
           window.localStorage.setItem("loggedIn", true);
