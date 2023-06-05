@@ -31,7 +31,7 @@ export default function LoginForm({ Login, error }) {
         console.log(data, "userRegister");
         if (data.message == "Admin successfully registered") {
           alert("login successful");
-          window.localStorage.setItem("token", data.data);
+          window.localStorage.setItem("token", data.data.token);
           window.localStorage.setItem("loggedIn", true);
           window.location.href ="./home"
         }

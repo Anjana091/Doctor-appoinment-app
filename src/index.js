@@ -2,6 +2,25 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import axios from "axios";
+
+
+// axios intercepters
+axios.interceptors.request.use((request) => {
+  const token = localStorage.getItem('token');
+  request.headers.Authorization = `Bearer ${token}`;
+  return request;
+});
+axios.interceptors.response.use(
+  (response) => response,
+  (error) => {
+    if (error.response.status === 401) {
+      localStorage.clear();
+      window.location = "/";
+    } else return Promise.reject(error);
+  }
+);
+//// axios intercepters end
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
