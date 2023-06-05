@@ -5,10 +5,19 @@ import { Link } from 'react-router-dom';
 import { SidebarData } from './SidebarData';
 import './Navbar.css';
 import { IconContext } from 'react-icons';
+import { useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 
 function Navbar() {
   const [sidebar, setSidebar] = useState("");
   const showSidebar = () => setSidebar(!sidebar);
+  const navigate = useNavigate()
+
+  useEffect(() => {
+    if(!localStorage.getItem('token')){
+         navigate('/')
+  }
+}, []);
   return (
     <>
       <IconContext.Provider value={{ color: '#fff' }}>
@@ -16,6 +25,13 @@ function Navbar() {
           <Link to='#' className='menu-bars'>
             <FaIcons.FaBars onClick={showSidebar} />
           </Link>
+          <div className="content">
+          <button
+          onClick={ ()=>{
+          localStorage.removeItem('token')
+           navigate('/')
+          }} >Log Out</button>
+          </div>
         </div>
         <nav className={sidebar ? 'nav-menu active' : 'nav-menu'}>
           <ul className='nav-menu-items' >
