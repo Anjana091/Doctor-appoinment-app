@@ -3,31 +3,27 @@ import "./home.css";
 import PatientList from "./patientList";
 import axios from "axios";
 import { useEffect, useState } from "react";
+import { redirect, useNavigate } from "react-router-dom";
+import Navbar from "./Navbar";
+
 
 export default function Home({} ) {
-  const [patients, setPatients] = useState([]);
-
-  const getPatients = async () => {
-    try {
-      const response = await axios.get("http://localhost:3001/patient/all");
-      console.log(response);
-      setPatients(response.data.data.patients);
-    } catch (error) {
-      console.log(error);
-    }
-  };
+  const navigate = useNavigate()
 
   useEffect(() => {
-    getPatients();
-  }, []);
+    if(!localStorage.getItem('token')){
+         navigate('/')
+  }
+}, []);
 
   return (
-    <div className="home">
-      <div className="container">
-        {patients.map((patient) => {
-          return <PatientList patient={patient}  />;
-        })}
-      </div>
+    <div>
+    <Navbar />
+      <button
+      onClick={ ()=>{
+       localStorage.removeItem('token')
+       navigate('/')
+      }} >Log Out</button>
     </div>
   );
 }

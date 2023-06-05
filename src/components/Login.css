@@ -76,6 +76,7 @@
   transform: translateX(-50%); 
   font-size: 35px;
   font-weight: bold;
+  color: #0f7378;
 }
 @media (max-width: 760px) {
   .login-image {
