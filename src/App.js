@@ -1,11 +1,10 @@
 import React from "react";
-import { BrowserRouter as Router, Routes, Route, Navigate } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import './App.css';
 import Login from "./components/Login";
 import Home from "./components/Home";
 import './components/Login.css';
 import './components/login-image.jpg';
-import Navbar from "./components/Navbar";
 import DoctorList from "./components/DoctorList";
 import PatientsPage from "./components/PatientsPage"
 

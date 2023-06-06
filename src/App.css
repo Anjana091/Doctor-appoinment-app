@@ -7,7 +7,7 @@
   }
   
   .Home,
-  .card,
+  .Table,
   .Dashboard,
   .DoctorList {
     display: flex;
