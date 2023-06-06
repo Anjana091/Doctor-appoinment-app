@@ -5,7 +5,7 @@ import Login from "./components/Login";
 import Home from "./components/Home";
 import "./components/Login.css";
 import "./components/login-image.jpg";
-import DoctorList from "./components/DoctorList";
+import DoctorsPage from "./components/DoctorsPage"
 import PatientsPage from "./components/PatientsPage";
 
 function App() {
@@ -16,7 +16,7 @@ function App() {
           <Route path="/" element={<Login />} />
           <Route path="/home" element={<Home />} />
           <Route path="/patientlist" element={<PatientsPage />} />
-          <Route path="/doctorlist" element={<DoctorList />} />
+          <Route path="/doctorlist" element={<DoctorsPage />} />
         </Routes>
       </div>
     </Router>

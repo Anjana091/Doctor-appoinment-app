@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-import "./patientList.css";
 import {
   Table,
   TableBody,
@@ -10,6 +9,7 @@ import {
   Paper,
   TablePagination,
   Box,
+  Typography,
 } from "@mui/material";
 import axios from "axios";
 
@@ -51,6 +51,9 @@ export default function PatientList({ patient }) {
           alignItems: "center",
         }}
       >
+        <Typography variant="h4" component="h2" gutterBottom>
+        Patients List
+      </Typography>
         <div style={{ overflowX: "auto", width: "100%" }}>
           <Box
             sx={{
@@ -62,7 +65,7 @@ export default function PatientList({ patient }) {
           >
             <TableContainer component={Paper}>
               <Box sx={{ borderRadius: "10px", overflow: "hidden" }}>
-                <Table sx={{ minWidth: 800 }}>
+                <Table sx={{ minWidth: 900 }}>
                   <TableHead>
                     <TableRow>
                       <TableCell
