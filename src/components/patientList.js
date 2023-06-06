@@ -1,10 +1,22 @@
 import React, { useEffect, useState } from "react";
 import "./patientList.css";
-import { Table, TableBody, TableCell, TableContainer, TableHead, TableRow, Paper } from '@mui/material';
+import {
+  Table,
+  TableBody,
+  TableCell,
+  TableContainer,
+  TableHead,
+  TableRow,
+  Paper,
+  TablePagination,
+  Box,
+} from "@mui/material";
 import axios from "axios";
 
-export default function PatientList({ patient}) {
+export default function PatientList({ patient }) {
   const [patients, setPatients] = useState([]);
+  const [page, setPage] = useState(0);
+  const [rowsPerPage, setRowsPerPage] = useState(5);
   const getPatients = async () => {
     try {
       const response = await axios.get("http://localhost:3001/patient/all");
@@ -16,32 +28,104 @@ export default function PatientList({ patient}) {
   };
 
   useEffect(() => {
-   
     getPatients();
-  
-}, []);
+  }, []);
+  const handleChangePage = (event, newPage) => {
+    setPage(newPage);
+  };
+
+  const handleChangeRowsPerPage = (event) => {
+    setRowsPerPage(parseInt(event.target.value, 10));
+    setPage(0);
+  };
+  const displayedPatients = patients.slice(
+    page * rowsPerPage,
+    page * rowsPerPage + rowsPerPage
+  );
   return (
     <div className="Table">
-       <TableContainer component={Paper} sx={{ marginTop: 0, borderRadius: 1, boxShadow: '0 2px 4px rgba(0, 0, 0, 0.1)', overflowX: 'auto' }}>
-      <Table sx={{ minWidth: 650 }}>
-        <TableHead>
-          <TableRow>
-            <TableCell sx={{ fontWeight: 'bold', backgroundColor: 'primary.main', color: 'common.white' }}>Name</TableCell>
-            <TableCell sx={{ fontWeight: 'bold', backgroundColor: 'primary.main', color: 'common.white' }}>Age</TableCell>
-            <TableCell sx={{ fontWeight: 'bold', backgroundColor: 'primary.main', color: 'common.white' }}>Gender</TableCell>
-          </TableRow>
-        </TableHead>
-        <TableBody>
-        {patients.map((patient) => (
-            <TableRow key={patient.PatientNo} sx={{ '&:nth-of-type(even)': { backgroundColor: 'background.default' }, '&:hover': { backgroundColor: 'action.hover' } }}>
-              <TableCell>{patient.fullname}</TableCell>
-              <TableCell>{patient.age}</TableCell>
-              <TableCell>{patient.gender}</TableCell>
-            </TableRow>
-          ))}
-        </TableBody>
-      </Table>
-    </TableContainer>
+      <div
+        style={{
+          display: "flex",
+          flexDirection: "column",
+          alignItems: "center",
+        }}
+      >
+        <div style={{ overflowX: "auto", width: "100%" }}>
+          <Box
+            sx={{
+              borderRadius: "10px",
+              overflow: "hidden",
+              boxShadow: "0 2px 4px rgba(0, 0, 0, 0.1)",
+              padding: "20px 10%",
+            }}
+          >
+            <TableContainer component={Paper}>
+              <Box sx={{ borderRadius: "10px", overflow: "hidden" }}>
+                <Table sx={{ minWidth: 800 }}>
+                  <TableHead>
+                    <TableRow>
+                      <TableCell
+                        sx={{
+                          fontWeight: "bold",
+                          backgroundColor: "#060b26",
+                          color: "common.white",
+                        }}
+                      >
+                        Name
+                      </TableCell>
+                      <TableCell
+                        sx={{
+                          fontWeight: "bold",
+                          backgroundColor: "#060b26",
+                          color: "common.white",
+                        }}
+                      >
+                        Age
+                      </TableCell>
+                      <TableCell
+                        sx={{
+                          fontWeight: "bold",
+                          backgroundColor: "#060b26",
+                          color: "common.white",
+                        }}
+                      >
+                        Gender
+                      </TableCell>
+                    </TableRow>
+                  </TableHead>
+                  <TableBody>
+                    {displayedPatients.map((patient) => (
+                      <TableRow
+                        key={patient.PatientNo}
+                        sx={{
+                          "&:nth-of-type(even)": {
+                            backgroundColor: "background.default",
+                          },
+                          "&:hover": { backgroundColor: "rgba(0, 0, 0, 0.1)" },
+                        }}
+                      >
+                        <TableCell>{patient.fullname}</TableCell>
+                        <TableCell>{patient.age}</TableCell>
+                        <TableCell>{patient.gender}</TableCell>
+                      </TableRow>
+                    ))}
+                  </TableBody>
+                </Table>
+              </Box>
+            </TableContainer>
+          </Box>
+        </div>
+        <TablePagination
+          rowsPerPageOptions={[5, 10, 25]}
+          component="div"
+          count={patients.length}
+          rowsPerPage={rowsPerPage}
+          page={page}
+          onPageChange={handleChangePage}
+          onRowsPerPageChange={handleChangeRowsPerPage}
+        />
+      </div>
     </div>
   );
 }
