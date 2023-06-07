@@ -1,14 +1,13 @@
 import React from "react";
-import "./PatientsPage.css";
 import Navbar from "./Navbar";
-import PatientList from "./patientList";
+import DoctorList from "./DoctorList";
 
 export default function Home() {
   return (
-    <div className="home">
+    <div className="tbl">
       <Navbar />
       <div className="container">
-        <PatientList />;
+        <DoctorList />;
       </div>
     </div>
   );

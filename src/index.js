@@ -1,13 +1,12 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+import React from "react";
+import ReactDOM from "react-dom/client";
+import App from "./App";
+import reportWebVitals from "./reportWebVitals";
 import axios from "axios";
-
 
 // axios intercepters
 axios.interceptors.request.use((request) => {
-  const token = localStorage.getItem('token');
+  const token = localStorage.getItem("token");
   request.headers.Authorization = `Bearer ${token}`;
   return request;
 });
@@ -22,7 +21,7 @@ axios.interceptors.response.use(
 );
 //// axios intercepters end
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
+const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
     <App />
