@@ -10,6 +10,7 @@ import {
   TablePagination,
   Box,
   Typography,
+  Button,
 } from "@mui/material";
 import axios from "axios";
 import "./PatientList.css";
@@ -52,9 +53,13 @@ export default function PatientList({ patient }) {
           alignItems: "center",
         }}
       >
-        <Typography variant="h4" component="h2" gutterBottom>
+        <Typography variant="h4"
+          component="h2"
+          gutterBottom
+          mt={2}
+          style={{ fontWeight: "bold", marginBottom: "10px", color: "#060b26" }}>
         Patients List
-      </Typography>
+        </Typography>
         <div style={{ overflowX: "auto", width: "100%" }}>
           <Box
             sx={{
@@ -66,7 +71,7 @@ export default function PatientList({ patient }) {
           >
             <TableContainer component={Paper}>
               <Box sx={{ borderRadius: "10px", overflow: "hidden" }}>
-                <Table sx={{ minWidth: 900 }}>
+                <Table>
                   <TableHead>
                     <TableRow>
                       <TableCell
@@ -129,6 +134,13 @@ export default function PatientList({ patient }) {
           onPageChange={handleChangePage}
           onRowsPerPageChange={handleChangeRowsPerPage}
         />
+        <Button
+          variant="contained"
+          color="primary"
+          style={{ marginTop: "20px" }}
+        >
+          Add Patient
+        </Button>
       </div>
     </div>
   );

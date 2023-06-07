@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import "./DoctorList.css";
 import {
   Table,
   TableBody,
@@ -10,9 +11,10 @@ import {
   TablePagination,
   Box,
   Typography,
+  Button,
 } from "@mui/material";
 import axios from "axios";
-import "./DoctorList.css"
+
 
 export default function DoctorList({ doctor }) {
   const [doctors, setDoctors] = useState([]);
@@ -52,7 +54,11 @@ export default function DoctorList({ doctor }) {
           alignItems: "center",
         }}
       >
-        <Typography variant="h4" component="h2" gutterBottom>
+        <Typography variant="h4"
+          component="h2"
+          gutterBottom
+          mt={2}
+          style={{ fontWeight: "bold", marginBottom: "10px", color: "#060b26" }}>
         Doctors List
       </Typography>
         <div style={{ overflowX: "auto", width: "100%" }}>
@@ -66,7 +72,7 @@ export default function DoctorList({ doctor }) {
           >
             <TableContainer component={Paper}>
               <Box sx={{ borderRadius: "10px", overflow: "hidden" }}>
-                <Table sx={{ minWidth: 900 }}>
+                <Table>
                   <TableHead>
                     <TableRow>
                       <TableCell
@@ -139,6 +145,13 @@ export default function DoctorList({ doctor }) {
           onPageChange={handleChangePage}
           onRowsPerPageChange={handleChangeRowsPerPage}
         />
+        <Button
+          variant="contained"
+          color="primary"
+          style={{ marginTop: "20px" }}
+        >
+          Add Doctor
+        </Button>
       </div>
     </div>
   );

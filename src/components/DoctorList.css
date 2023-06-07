@@ -1,49 +1,51 @@
 @media (max-width: 600px) {
  
-    .MuiTableContainer-root {
-      padding: 10px;
-    }
-  
-    .MuiTable-root {
-      min-width: 300px;
-    }
-  
-    .MuiTableCell-head {
-      font-size: 14px;
-      padding: 8px;
-    }
-  
-    .MuiTableCell-body {
-      font-size: 14px;
-      padding: 8px;
-    }
-  
-  
-    .table-wrapper {
-      overflow-x: auto;
-    }
-  
-    .MuiTableContainer-root {
-      width: 100%;
-    }
-  
-    .MuiTable-root {
-      min-width: 300px;
-    }
-  
-    .MuiTableCell-head {
-      font-size: 14px;
-      padding: 8px;
-    }
-  
-    .MuiTableCell-body {
-      font-size: 14px;
-      padding: 8px;
-    }
-  
-    .MuiTablePagination-root {
-      font-size: 12px;
-      padding: 10px;
-    }
+  .MuiTableContainer-root {
+    padding: 10px;
   }
-  
+
+  .MuiTable-root {
+    min-width: 350px;
+  }
+
+  .MuiTableCell-head {
+    font-size: 12px;
+    padding: 8px;
+  }
+
+  .MuiTableCell-body {
+    font-size: 12px;
+    padding: 8px;
+    white-space: nowrap;
+    overflow: hidden;
+   text-overflow: ellipsis;
+  }
+
+
+  .table-wrapper {
+    overflow-x: auto;
+  }
+
+  .MuiTableContainer-root {
+    width: 100%;
+  }
+
+  .MuiTable-root {
+    min-width: 300px;
+  }
+
+  .MuiTableCell-head {
+    font-size: 12px;
+    padding: 8px;
+  }
+
+  .MuiTableCell-body {
+    font-size: 12px;
+    padding: 8px;
+  }
+
+  .MuiTablePagination-root {
+    font-size: 12px;
+    padding: 10px;
+  }
+}
