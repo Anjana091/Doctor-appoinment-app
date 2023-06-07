@@ -6,9 +6,8 @@
 }
 
 .Home,
-.Table,
-.Dashboard,
-.DoctorList {
+/* .Table, */
+.Dashboard {
   display: flex;
   height: 90vh;
   align-items: center;
