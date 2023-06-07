@@ -1,10 +1,11 @@
 import React, { useState } from "react";
 import "./Login.css";
-import image from "./login-image.jpg";
+import image from "./Asset 1.png";
 
 export default function LoginForm({ Login, error }) {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [loginSuccess, setLoginSuccess] = useState(false);
 
   const submitHandler = (e) => {
     e.preventDefault();
@@ -27,10 +28,12 @@ export default function LoginForm({ Login, error }) {
       .then((data) => {
         console.log(data, "userRegister");
         if (data.message === "Admin successfully registered") {
-          alert("login successful");
+          setLoginSuccess(true);
           window.localStorage.setItem("token", data.data.token);
           window.localStorage.setItem("loggedIn", true);
-          window.location.href = "./home";
+          setTimeout(() => {
+            window.location.href = "./home";
+          }, 150);
         }
       });
   };
@@ -65,6 +68,9 @@ export default function LoginForm({ Login, error }) {
         </div>
 
         <input type="submit" value="LOGIN" />
+        {loginSuccess && (
+        <div className="success">Login successful!</div>
+      )}
       </div>
       <div className="quote-container">
         <p className="quote">"The heart of your healthcare. "</p>

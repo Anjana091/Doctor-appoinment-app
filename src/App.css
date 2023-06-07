@@ -10,4 +10,22 @@
   align-items: center;
   justify-content: center;
   font-size: 1rem;
+  padding: 20px;
+}
+.container {
+  position: relative;
+}
+
+.background-wrapper {
+  background-image: url('./components/Doctor_tools_and_Medical_elements_pattern_cartoon_hand_drawn_cartoon_art_illustration\ [Converted].png');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  min-height: 100vh;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  opacity: 0.2;
+  z-index: -1;
 }

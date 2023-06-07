@@ -10,7 +10,7 @@ import {
   TablePagination,
   Box,
   Typography,
-  Button,
+  Button
 } from "@mui/material";
 import axios from "axios";
 import "./PatientList.css";

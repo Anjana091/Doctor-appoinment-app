@@ -91,15 +91,6 @@ export default function DoctorList({ doctor }) {
                           color: "common.white",
                         }}
                       >
-                        Gender
-                      </TableCell>
-                      <TableCell
-                        sx={{
-                          fontWeight: "bold",
-                          backgroundColor: "#060b26",
-                          color: "common.white",
-                        }}
-                      >
                         Speciality
                       </TableCell>
                       <TableCell
@@ -110,6 +101,24 @@ export default function DoctorList({ doctor }) {
                         }}
                       >
                         Qualification
+                      </TableCell>
+                      <TableCell
+                        sx={{
+                          fontWeight: "bold",
+                          backgroundColor: "#060b26",
+                          color: "common.white",
+                        }}
+                      >
+                        Experience
+                      </TableCell>
+                      <TableCell
+                        sx={{
+                          fontWeight: "bold",
+                          backgroundColor: "#060b26",
+                          color: "common.white",
+                        }}
+                      >
+                        ContactInfo
                       </TableCell>
                     </TableRow>
                   </TableHead>
@@ -128,6 +137,8 @@ export default function DoctorList({ doctor }) {
                         <TableCell>{doctor.gender}</TableCell>
                         <TableCell>{doctor.Specialty}</TableCell>
                         <TableCell>{doctor.Qualification}</TableCell>
+                        <TableCell>{doctor.Experience}</TableCell>
+                        <TableCell>{doctor.ContactInfo}</TableCell>
                       </TableRow>
                     ))}
                   </TableBody>

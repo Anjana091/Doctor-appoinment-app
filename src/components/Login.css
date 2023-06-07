@@ -65,7 +65,6 @@ input[type="submit"] {
 .quote {
   white-space: nowrap;
   text-align: center;
-  color: bl;
   position: absolute;
   bottom: -300px;
   left: -350px;
@@ -74,15 +73,41 @@ input[type="submit"] {
   font-weight: bold;
   color: #0f7378;
 }
+
+.success {
+  position: relative;
+  z-index: 2;
+  bottom: -30px;
+  left: 50%;
+  transform: translateX(-50%);
+  color: green;
+  opacity: 0;
+  animation-name: fade-in;
+  animation-duration: 0.15s;
+  animation-fill-mode: forwards;
+  margin-top: 10px;
+  font-weight: bold;
+  text-align: center;
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
 @media (max-width: 760px) {
   .login-image {
-    width: 350px;
-    height: 350px;
+    width: 200px;
+    height: 250px; 
     padding-bottom: 20px;
     padding-right: 0px;
   }
-  .quote-container {
-    visibility: hidden;
+  .quote-container{
+   visibility: hidden;
   }
   .login-form {
     display: flex;
@@ -91,4 +116,4 @@ input[type="submit"] {
     border-radius: 0px;
     padding: 0;
   }
-}
+  }
