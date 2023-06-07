@@ -28,7 +28,7 @@
   padding: 40px;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: row;
   align-items: center;
   border-radius: 10px;
   backface-visibility: hidden;

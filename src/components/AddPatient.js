@@ -68,7 +68,7 @@ export default function AddPatient() {
                         />
                     </div>
                     <div className="form-grp">
-                        <label>Speciality:</label>
+                        <label>Age:</label>
                         <input
                             type="text"
                             name="Age"
@@ -77,7 +77,7 @@ export default function AddPatient() {
                         />
                     </div>
                     <div className="form-grp">
-                        <label >Qualification:</label>
+                        <label >Gender:</label>
                         <input
                             type="text"
                             name="Gender"
