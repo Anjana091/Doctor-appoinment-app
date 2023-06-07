@@ -1,19 +1,21 @@
+
 .login-form {
   display: flex;
   justify-content: center;
   align-items: center;
   height: 100vh;
-  background-color: white;
+  background-color:white;
 }
 .login-image {
   width: 350px;
-  height: 350px;
+  height: 350px; 
   padding-right: 50px;
+  
 }
 
 .form-inner {
   width: 300px;
-  height: 310px;
+  height:310px ;
   padding: 20px;
   background-color: white;
   border: 2px solid #4caaaf;
@@ -36,15 +38,16 @@ label {
   font-weight: bold;
 }
 
-input[type="email"],
-input[type="password"] {
+
+input[type='email'],
+input[type='password'] {
   width: 90%;
   padding: 8px;
   border-radius: 5px;
-  border: 1px solid #4caaaf;
+  border: 1px solid #4caaaf
 }
 
-input[type="submit"] {
+input[type='submit'] {
   width: 50%;
   margin-left: 25%;
   margin-top: 30px;
@@ -55,16 +58,18 @@ input[type="submit"] {
   cursor: pointer;
   border: 1px solid #4caaaf;
   border-radius: 5px;
+
 }
 
 .quote-container {
-  position: relative;
-  margin-top: 20px;
+position: relative;
+margin-top: 20px;
 }
 
 .quote {
   white-space: nowrap;
   text-align: center;
+  color: bl;
   position: absolute;
   bottom: -300px;
   left: -350px;
@@ -101,13 +106,13 @@ input[type="submit"] {
 
 @media (max-width: 760px) {
   .login-image {
-    width: 200px;
-    height: 250px; 
+    width: 350px;
+    height: 350px;
     padding-bottom: 20px;
     padding-right: 0px;
   }
-  .quote-container{
-   visibility: hidden;
+  .quote-container {
+    visibility: hidden;
   }
   .login-form {
     display: flex;
@@ -116,4 +121,4 @@ input[type="submit"] {
     border-radius: 0px;
     padding: 0;
   }
-  }
+}

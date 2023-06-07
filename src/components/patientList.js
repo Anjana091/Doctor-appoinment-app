@@ -74,6 +74,15 @@ export default function PatientList({ patient }) {
                 <Table>
                   <TableHead>
                     <TableRow>
+                    <TableCell
+                        sx={{
+                          fontWeight: "bold",
+                          backgroundColor: "#060b26",
+                          color: "common.white",
+                        }}
+                      >
+                        Patient No
+                      </TableCell>
                       <TableCell
                         sx={{
                           fontWeight: "bold",
@@ -114,6 +123,7 @@ export default function PatientList({ patient }) {
                           "&:hover": { backgroundColor: "rgba(0, 0, 0, 0.1)" },
                         }}
                       >
+                        <TableCell>{patient.PatientNo}</TableCell>
                         <TableCell>{patient.fullname}</TableCell>
                         <TableCell>{patient.age}</TableCell>
                         <TableCell>{patient.gender}</TableCell>
@@ -134,13 +144,6 @@ export default function PatientList({ patient }) {
           onPageChange={handleChangePage}
           onRowsPerPageChange={handleChangeRowsPerPage}
         />
-        <Button
-          variant="contained"
-          color="primary"
-          style={{ marginTop: "20px" }}
-        >
-          Add Patient
-        </Button>
       </div>
     </div>
   );
