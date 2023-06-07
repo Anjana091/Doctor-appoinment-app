@@ -1,5 +1,5 @@
 .navbar {
-  background-color: #060b26;
+  background-image: linear-gradient(to right, #060b26 , #1a2980 );
   height: 100px;
   display: flex;
   justify-content: space-between;
@@ -61,7 +61,7 @@
 .navbar-toggle {
   background-color: #060b26;
   width: 100%;
-  height: 80px;
+  height: 100px;
   display: flex;
   justify-content: flex-start;
   align-items: center;
@@ -93,7 +93,12 @@ span {
   transition: margin-left 350ms;
 }
 .heading{
-  color: #837e7e;
-  margin-left: 40px;
-  margin-bottom: 40px;
+  color: #747070;
+  margin-left: 60px;
+  margin-bottom: 50px;
+  display: flex;
+  align-items: center;
+  padding: 0 16px;
+  border-radius: 4px;
+  
 }

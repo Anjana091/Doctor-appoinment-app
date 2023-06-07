@@ -7,6 +7,7 @@ import "./components/Login.css";
 import DoctorsPage from "./components/DoctorsPage"
 import PatientsPage from "./components/PatientsPage";
 import AddDoctor from "./components/AddDoctor";
+import AddPatient from "./components/AddPatient";
 
 function App() {
   return (
@@ -18,7 +19,7 @@ function App() {
           <Route path="/patientlist" element={<PatientsPage />} />
           <Route path="/doctorlist" element={<DoctorsPage />} />
           <Route path="/doctorlist/add-doctor" element={<AddDoctor />} />
-
+          <Route path="/patientlist/add-patient" element={<AddPatient />} />
         </Routes>
       </div>
     </Router>

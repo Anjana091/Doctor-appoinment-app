@@ -18,9 +18,12 @@ export default function Home() {
   }, []);
 
   return (
-    <div>
-      <Navbar />
-      <Card />
+    <div className="container">
+      <div className="background-wrapper"></div>
+            <Navbar />
+      <div className="home">
+      <Card />;
+     </div>
     </div>
   );
 }

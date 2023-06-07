@@ -1,0 +1,68 @@
+.patient-form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 90vh;
+    background-color:white;
+  }
+  
+  .form-box {
+    width: 500px;
+    padding: 20px;
+    background-color: rgb(238, 240, 246);
+    border-radius: 10px;
+  }
+  
+  h2 {
+    text-align: center;
+    margin-bottom: 10px;
+  }
+  
+  label {
+    font-weight: bold;
+    color: rgb(70, 70, 84);
+  }
+  
+  input[type='number'],
+  input[type='text']{
+  width: 90%;
+  padding: 8px;
+  border: none;
+  outline: none;
+  border-bottom: 2px solid rgb(179, 177, 177);
+  margin: 10px;
+  background: transparent;
+  }
+  
+  #pt-submit {
+  width: 25%;
+  margin-left: 35%;
+  margin-top: 30px;
+  padding: 10px;
+  background-color: #060b26;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  border: 1px solid #060b26;
+  border-radius: 10px;
+  
+  }
+  #pt-submit:hover{
+    background-color: rgb(47, 50, 52);
+  }
+  
+  @media (max-width: 768px) {
+    .form-box {
+      width: 90%;
+      height: auto;
+    }
+    
+    .patient-form {
+      height: auto;
+      padding: 20px;
+    }
+    #pt-submit {
+      width: 40%;
+      margin-left: 30%;
+    }
+  }

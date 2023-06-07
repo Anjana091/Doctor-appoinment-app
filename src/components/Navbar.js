@@ -37,7 +37,7 @@ function Navbar() {
           <ul className="nav-menu-items">
             <li className="navbar-toggle">
               <Link to="#" className="menu-bars">
-                <AiIcons.AiOutlineClose onClick={showSidebar} />
+                <AiIcons.AiOutlineClose onClick={showSidebar}/>
               </Link>
             </li>
             <h1 className="heading">Admin</h1>

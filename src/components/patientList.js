@@ -14,8 +14,10 @@ import {
 } from "@mui/material";
 import axios from "axios";
 import "./PatientList.css";
+import { useNavigate } from "react-router-dom";
 
 export default function PatientList({ patient }) {
+  const navigate = useNavigate();
   const [patients, setPatients] = useState([]);
   const [page, setPage] = useState(0);
   const [rowsPerPage, setRowsPerPage] = useState(5);
@@ -144,6 +146,18 @@ export default function PatientList({ patient }) {
           onPageChange={handleChangePage}
           onRowsPerPageChange={handleChangeRowsPerPage}
         />
+        <Button
+          variant="contained"
+          color="primary"
+          style={{ marginTop: "20px" }}
+        
+          onClick={ ()=>{
+           navigate('/patientlist/add-patient')
+          }}
+
+        >
+          Add Patient
+        </Button>
       </div>
     </div>
   );

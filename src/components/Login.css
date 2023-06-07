@@ -82,7 +82,7 @@ margin-top: 20px;
 .success {
   position: relative;
   z-index: 2;
-  bottom: -30px;
+  bottom: -10px;
   left: 50%;
   transform: translateX(-50%);
   color: green;
@@ -106,8 +106,8 @@ margin-top: 20px;
 
 @media (max-width: 760px) {
   .login-image {
-    width: 350px;
-    height: 350px;
+    width: 200px;
+    height: 250px;
     padding-bottom: 20px;
     padding-right: 0px;
   }
