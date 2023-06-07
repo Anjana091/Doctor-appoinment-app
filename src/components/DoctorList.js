@@ -14,9 +14,13 @@ import {
   Button,
 } from "@mui/material";
 import axios from "axios";
+import { useNavigate } from "react-router-dom";
+
 
 
 export default function DoctorList({ doctor }) {
+  const navigate = useNavigate();
+
   const [doctors, setDoctors] = useState([]);
   const [page, setPage] = useState(0);
   const [rowsPerPage, setRowsPerPage] = useState(5);
@@ -65,13 +69,13 @@ export default function DoctorList({ doctor }) {
           <Box
             sx={{
               borderRadius: "10px",
-              overflow: "hidden",
+              overflow: "auto",
               boxShadow: "0 2px 4px rgba(0, 0, 0, 0.1)",
               padding: "20px 10%",
             }}
           >
             <TableContainer component={Paper}>
-              <Box sx={{ borderRadius: "10px", overflow: "hidden" }}>
+              <Box sx={{ borderRadius: "10px", overflow: "auto" }}>
                 <Table>
                   <TableHead>
                     <TableRow>
@@ -91,15 +95,6 @@ export default function DoctorList({ doctor }) {
                           color: "common.white",
                         }}
                       >
-                        Gender
-                      </TableCell>
-                      <TableCell
-                        sx={{
-                          fontWeight: "bold",
-                          backgroundColor: "#060b26",
-                          color: "common.white",
-                        }}
-                      >
                         Speciality
                       </TableCell>
                       <TableCell
@@ -110,6 +105,24 @@ export default function DoctorList({ doctor }) {
                         }}
                       >
                         Qualification
+                      </TableCell>
+                      <TableCell
+                        sx={{
+                          fontWeight: "bold",
+                          backgroundColor: "#060b26",
+                          color: "common.white",
+                        }}
+                      >
+                        Experience
+                      </TableCell>
+                      <TableCell
+                        sx={{
+                          fontWeight: "bold",
+                          backgroundColor: "#060b26",
+                          color: "common.white",
+                        }}
+                      >
+                        Contact Info
                       </TableCell>
                     </TableRow>
                   </TableHead>
@@ -125,9 +138,11 @@ export default function DoctorList({ doctor }) {
                         }}
                       >
                         <TableCell>{doctor.fullname}</TableCell>
-                        <TableCell>{doctor.gender}</TableCell>
                         <TableCell>{doctor.Specialty}</TableCell>
                         <TableCell>{doctor.Qualification}</TableCell>
+                        <TableCell>{doctor.Experience}</TableCell>
+                        <TableCell>{doctor.ContactInfo}</TableCell>
+
                       </TableRow>
                     ))}
                   </TableBody>
@@ -149,6 +164,11 @@ export default function DoctorList({ doctor }) {
           variant="contained"
           color="primary"
           style={{ marginTop: "20px" }}
+        
+          onClick={ ()=>{
+           navigate('/doctorlist/add-doctor')
+          }}
+
         >
           Add Doctor
         </Button>

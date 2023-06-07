@@ -1,6 +1,6 @@
 .navbar {
-  background-color: #060b26;
-  height: 100px;
+  background-image: linear-gradient(to right, #060b26 , #1a2980 );
+  height: 80px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -8,7 +8,7 @@
 
 .menu-bars {
   margin-left: 2rem;
-  font-size: 2rem;
+  font-size: 1.5rem;
   background: none;
 }
 
@@ -72,9 +72,10 @@ span {
   margin-left: 16px;
 }
 .content button {
-  margin-top: 1rem;
   border: none;
-  background-color: #1d4ed8;
+  box-shadow: 1px 2px #98a9c2;
+  background-color: #6d84c4;
+  box-shadow: inset;
   color: #fff;
   padding: 0.5rem 1rem;
   border-radius: 10px;
@@ -90,4 +91,9 @@ span {
 
 .home {
   transition: margin-left 350ms;
+}
+.heading{
+  color: #837e7e;
+  margin-left: 40px;
+  margin-bottom: 40px;
 }

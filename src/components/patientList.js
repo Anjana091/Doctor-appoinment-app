@@ -134,13 +134,6 @@ export default function PatientList({ patient }) {
           onPageChange={handleChangePage}
           onRowsPerPageChange={handleChangeRowsPerPage}
         />
-        <Button
-          variant="contained"
-          color="primary"
-          style={{ marginTop: "20px" }}
-        >
-          Add Patient
-        </Button>
       </div>
     </div>
   );

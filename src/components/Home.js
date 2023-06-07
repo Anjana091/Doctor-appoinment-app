@@ -5,6 +5,8 @@ import "./home.css";
 import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import Navbar from "./Navbar";
+import Card from "./card"
+
 
 export default function Home() {
   const navigate = useNavigate();
@@ -18,6 +20,7 @@ export default function Home() {
   return (
     <div>
       <Navbar />
+      <Card />
     </div>
   );
 }

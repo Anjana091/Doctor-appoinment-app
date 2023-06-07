@@ -40,6 +40,7 @@ function Navbar() {
                 <AiIcons.AiOutlineClose onClick={showSidebar} />
               </Link>
             </li>
+            <h1 className="heading">Admin</h1>
             {SidebarData.map((item, index) => {
               return (
                 <li key={index} className={item.cName}>

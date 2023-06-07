@@ -7,6 +7,7 @@ import "./components/Login.css";
 import "./components/login-image.jpg";
 import DoctorsPage from "./components/DoctorsPage"
 import PatientsPage from "./components/PatientsPage";
+import AddDoctor from "./components/AddDoctor";
 
 function App() {
   return (
@@ -17,6 +18,8 @@ function App() {
           <Route path="/home" element={<Home />} />
           <Route path="/patientlist" element={<PatientsPage />} />
           <Route path="/doctorlist" element={<DoctorsPage />} />
+          <Route path="/doctorlist/add-doctor" element={<AddDoctor />} />
+
         </Routes>
       </div>
     </Router>
