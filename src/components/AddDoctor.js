@@ -7,7 +7,7 @@ import axios from 'axios';
 
 export default function AddDoctor() {
     const [doctor, setDoctor] = useState({
-        doctortNo: "",
+        doctorNo: "",
         fullname: "",
         Specialty: "",
         Qualification: "",
@@ -55,8 +55,8 @@ export default function AddDoctor() {
                         <label>Doctor ID:</label>
                         <input
                             type="text"
-                            name="doctortNo"
-                            value={doctor.doctortNo}
+                            name="doctorNo"
+                            value={doctor.doctorNo}
                             onChange={(e) => handleChangeHandler(e)}
                         />
                     </div>

@@ -129,7 +129,7 @@ export default function DoctorList({ doctor }) {
                   <TableBody>
                     {displayedDoctors.map((doctor) => (
                       <TableRow
-                        key={doctor.doctortNo}
+                        key={doctor.doctorNo}
                         sx={{
                           "&:nth-of-type(even)": {
                             backgroundColor: "background.default",
