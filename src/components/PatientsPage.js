@@ -4,11 +4,11 @@ import PatientList from "./patientList";
 
 export default function Home() {
   return (
-    <div className="home">
-      <Navbar />
-      <div className="container">
-        <PatientList />;
-      </div>
+    <div className="container">
+            <Navbar />
+      <div className="home">
+      <PatientList />;
+     </div>
     </div>
   );
 }

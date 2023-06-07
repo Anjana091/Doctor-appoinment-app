@@ -4,11 +4,11 @@ import DoctorList from "./DoctorList";
 
 export default function Home() {
   return (
-    <div className="tbl">
-      <Navbar />
-      <div className="container">
-        <DoctorList />;
-      </div>
+    <div className="container">
+            <Navbar />
+      <div className="home">
+      <DoctorList />;
+     </div>
     </div>
   );
 }
