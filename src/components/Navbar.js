@@ -25,6 +25,13 @@ function Navbar() {
           <Link to="#" className="menu-bars">
             <FaIcons.FaBars onClick={showSidebar} />
           </Link>
+          <div className="content">
+          <button
+          onClick={ ()=>{
+            localStorage.clear();
+           navigate('/')
+          }} >Log Out</button>
+          </div>
         </div>
         <nav className={sidebar ? "nav-menu active" : "nav-menu"}>
           <ul className="nav-menu-items">

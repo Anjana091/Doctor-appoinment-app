@@ -12,6 +12,7 @@ import {
   Typography,
 } from "@mui/material";
 import axios from "axios";
+import "./PatientList.css";
 
 export default function PatientList({ patient }) {
   const [patients, setPatients] = useState([]);
