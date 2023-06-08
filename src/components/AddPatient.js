@@ -1,16 +1,18 @@
-import React, { useState,useEffect} from 'react';
+import React, { useState, useEffect } from 'react';
 import './AddPatient.css'
 import Navbar from './Navbar';
 import { useNavigate } from "react-router-dom";
 import axios from 'axios';
+import Select, { SelectChangeEvent } from '@mui/material/Select';
+
 
 
 export default function AddPatient() {
     const [patient, setPatient] = useState({
+        PatientNo: "",
         fullname: "",
         age: "",
         gender: "",
-        PatientNo: "",
     });
 
     const navigate = useNavigate()
@@ -19,19 +21,19 @@ export default function AddPatient() {
 
     const handleChangeHandler = (e) => {
         setPatient({
-          ...patient,
-          [e.target.name]: e.target.value,
+            ...patient,
+            [e.target.name]: e.target.value,
         });
-      };
-    
+    };
+
 
     const handleSubmit = async (e) => {
         try {
             e.preventDefault();
-            const res = await axios.post("http://localhost:3001/patient/register",patient);
+            const res = await axios.post("http://localhost:3001/patient/register", patient);
             console.log(res);
             alert(res.data.message);
-            navigate("/patientlist")
+            navigate("/patientlist");
         } catch (error) {
             console.log(error);
         }
@@ -52,8 +54,8 @@ export default function AddPatient() {
                     <div className="form-grp">
                         <label>patient ID:</label>
                         <input
-                            type="text"
-                            name="patientNo"
+                            type="number"
+                            name="PatientNo"
                             value={patient.PatientNo}
                             onChange={(e) => handleChangeHandler(e)}
                         />
@@ -70,20 +72,24 @@ export default function AddPatient() {
                     <div className="form-grp">
                         <label>Age:</label>
                         <input
-                            type="text"
-                            name="Age"
+                            type="number"
+                            name="age"
                             value={patient.age}
                             onChange={(e) => handleChangeHandler(e)}
                         />
                     </div>
-                    <div className="form-grp">
+                    <div className="form-grp" >
                         <label >Gender:</label>
-                        <input
-                            type="text"
-                            name="Gender"
+                        <select
+                            name="gender"
                             value={patient.gender}
                             onChange={(e) => handleChangeHandler(e)}
-                        />
+                        >
+                            <option value="">Select Gender</option>
+                            <option value="male">Male</option>
+                            <option value="female">Female</option>
+                            <option value="other">Other</option>
+                        </select>
                     </div>
                     <div className="form-grp">
                         <button type="submit" id="pt-submit">Add patient</button>
