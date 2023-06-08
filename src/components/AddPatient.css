@@ -50,7 +50,7 @@
   #pt-submit:hover{
     background-color: rgb(47, 50, 52);
   }
-  
+ 
   @media (max-width: 400px) {
     .form-box {
       width: 90%;
