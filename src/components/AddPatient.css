@@ -51,7 +51,7 @@
     background-color: rgb(47, 50, 52);
   }
   
-  @media (max-width: 768px) {
+  @media (max-width: 400px) {
     .form-box {
       width: 90%;
       height: auto;

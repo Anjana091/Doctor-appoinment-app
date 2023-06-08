@@ -2,7 +2,7 @@ import React from "react";
 import Navbar from "./Navbar";
 import DoctorList from "./DoctorList";
 
-export default function Home() {
+export default function DoctorPage() {
   return (
     <div className="container">
       <div className="background-wrapper"></div>

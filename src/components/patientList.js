@@ -31,6 +31,8 @@ export default function PatientList({ patient }) {
     }
   };
 
+
+
   useEffect(() => {
     getPatients();
   }, []);
@@ -60,7 +62,7 @@ export default function PatientList({ patient }) {
           gutterBottom
           mt={2}
           style={{ fontWeight: "bold", marginBottom: "10px", color: "#060b26" }}>
-        Patients List
+          Patients List
         </Typography>
         <div style={{ overflowX: "auto", width: "100%" }}>
           <Box
@@ -76,7 +78,7 @@ export default function PatientList({ patient }) {
                 <Table>
                   <TableHead>
                     <TableRow>
-                    <TableCell
+                      <TableCell
                         sx={{
                           fontWeight: "bold",
                           backgroundColor: "#060b26",
@@ -139,15 +141,23 @@ export default function PatientList({ patient }) {
                         <TableCell>{patient.age}</TableCell>
                         <TableCell>{patient.gender}</TableCell>
                         <TableCell>
-                        <Button
-          variant="contained"
-          color="error"
-          style={{ fontSize : "10px"}}
-          onClick={ ()=>{
-           navigate('/patientlist/add-patient')
-          }}
+                          <Button
+                            variant="contained"
+                            color="error"
+                            style={{ fontSize: "10px" }}
+                            onClick={async () => {
+                              await axios.delete(
+                                "http://localhost:3001/patient/", {
+                                params: {
+                                  PatientNo: patient.PatientNo
+                                }
+                              }
+                              );
+                              window.location="/PatientList"
 
-        >Remove </Button>
+                            }}
+
+                          >Remove </Button>
 
                         </TableCell>
                       </TableRow>
@@ -171,9 +181,9 @@ export default function PatientList({ patient }) {
           variant="contained"
           color="primary"
           style={{ marginTop: "20px" }}
-        
-          onClick={ ()=>{
-           navigate('/patientlist/add-patient')
+
+          onClick={() => {
+            navigate('/patientlist/add-patient')
           }}
 
         >

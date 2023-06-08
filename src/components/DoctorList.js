@@ -124,6 +124,14 @@ export default function DoctorList({ doctor }) {
                       >
                         Contact Info
                       </TableCell>
+                      <TableCell
+                        sx={{
+                          fontWeight: "bold",
+                          backgroundColor: "#060b26",
+                          color: "common.white",
+                        }}
+                      > Action
+                       </TableCell>
                     </TableRow>
                   </TableHead>
                   <TableBody>
@@ -142,7 +150,25 @@ export default function DoctorList({ doctor }) {
                         <TableCell>{doctor.Qualification}</TableCell>
                         <TableCell>{doctor.Experience}</TableCell>
                         <TableCell>{doctor.ContactInfo}</TableCell>
+                        <TableCell>
+                          <Button
+                            variant="contained"
+                            color="error"
+                            style={{ fontSize: "10px" }}
+                            onClick={async () => {
+                              await axios.delete(
+                                "http://localhost:3001/doctor/", {
+                                params: {
+                                  doctorNo: doctor.doctorNo
+                                }
+                              }
+                              );
+                              window.location="/DoctorList"
+                            }}
 
+                          >Remove </Button>
+
+                        </TableCell>
                       </TableRow>
                     ))}
                   </TableBody>
