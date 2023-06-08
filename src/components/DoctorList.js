@@ -84,7 +84,6 @@ export default function DoctorList({ doctor }) {
                           fontWeight: "bold",
                           backgroundColor: "#060b26",
                           color: "common.white",
-                          textAlign: "center",
                         }}
                       >
                         Name
@@ -94,7 +93,6 @@ export default function DoctorList({ doctor }) {
                           fontWeight: "bold",
                           backgroundColor: "#060b26",
                           color: "common.white",
-                          textAlign: "center",
                         }}
                       >
                         Speciality
@@ -104,7 +102,6 @@ export default function DoctorList({ doctor }) {
                           fontWeight: "bold",
                           backgroundColor: "#060b26",
                           color: "common.white",
-                          textAlign: "center",
                         }}
                       >
                         Qualification
@@ -114,7 +111,6 @@ export default function DoctorList({ doctor }) {
                           fontWeight: "bold",
                           backgroundColor: "#060b26",
                           color: "common.white",
-                          textAlign: "center",
                         }}
                       >
                         Experience
@@ -124,7 +120,6 @@ export default function DoctorList({ doctor }) {
                           fontWeight: "bold",
                           backgroundColor: "#060b26",
                           color: "common.white",
-                          textAlign: "center",
                         }}
                       >
                         Contact Info

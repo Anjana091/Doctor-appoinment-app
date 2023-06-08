@@ -72,7 +72,7 @@ export default function PatientList({ patient }) {
             }}
           >
             <TableContainer component={Paper}>
-              <Box sx={{ borderRadius: "10px", overflow: "hidden" }}>
+              <Box sx={{ borderRadius: "10px", overflow: "auto" }}>
                 <Table>
                   <TableHead>
                     <TableRow>
@@ -112,6 +112,15 @@ export default function PatientList({ patient }) {
                       >
                         Gender
                       </TableCell>
+                      <TableCell
+                        sx={{
+                          fontWeight: "bold",
+                          backgroundColor: "#060b26",
+                          color: "common.white",
+                        }}
+                      >
+                        Action
+                      </TableCell>
                     </TableRow>
                   </TableHead>
                   <TableBody>
@@ -129,6 +138,18 @@ export default function PatientList({ patient }) {
                         <TableCell>{patient.fullname}</TableCell>
                         <TableCell>{patient.age}</TableCell>
                         <TableCell>{patient.gender}</TableCell>
+                        <TableCell>
+                        <Button
+          variant="contained"
+          color="error"
+          style={{ fontSize : "10px"}}
+          onClick={ ()=>{
+           navigate('/patientlist/add-patient')
+          }}
+
+        >Remove </Button>
+
+                        </TableCell>
                       </TableRow>
                     ))}
                   </TableBody>
