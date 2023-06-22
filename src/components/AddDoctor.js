@@ -13,6 +13,8 @@ export default function AddDoctor() {
         Qualification: "",
         Experience: "",
         ContactInfo: "",
+        Fees:"",
+        tokenPerDay:""
     });
 
     const navigate = useNavigate()
@@ -102,6 +104,24 @@ export default function AddDoctor() {
                             type="text"
                             name="ContactInfo"
                             value={doctor.ContactInfo}
+                            onChange={(e) => handleChangeHandler(e)}
+                        />
+                    </div>
+                    <div className="form-grp">
+                        <label>fees per consultation:</label>
+                        <input
+                            type="number"
+                            name="fees"
+                            value={doctor.fees}
+                            onChange={(e) => handleChangeHandler(e)}
+                        />
+                    </div>
+                    <div className="form-grp">
+                        <label>Tokens Per Day</label>
+                        <input
+                            type="number"
+                            name="tokenPerDay"
+                            value={doctor.tokenPerDay}
                             onChange={(e) => handleChangeHandler(e)}
                         />
                     </div>

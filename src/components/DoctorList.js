@@ -130,6 +130,24 @@ export default function DoctorList({ doctor }) {
                           backgroundColor: "#060b26",
                           color: "common.white",
                         }}
+                      >
+                        Fees
+                      </TableCell>
+                      <TableCell
+                        sx={{
+                          fontWeight: "bold",
+                          backgroundColor: "#060b26",
+                          color: "common.white",
+                        }}
+                      >
+                      Tokens Per Day
+                      </TableCell>
+                      <TableCell
+                        sx={{
+                          fontWeight: "bold",
+                          backgroundColor: "#060b26",
+                          color: "common.white",
+                        }}
                       > Action
                        </TableCell>
                     </TableRow>
@@ -150,6 +168,8 @@ export default function DoctorList({ doctor }) {
                         <TableCell>{doctor.Qualification}</TableCell>
                         <TableCell>{doctor.Experience}</TableCell>
                         <TableCell>{doctor.ContactInfo}</TableCell>
+                        <TableCell>{doctor.fees}</TableCell>
+                        <TableCell>{doctor.tokenPerDay}</TableCell>
                         <TableCell>
                           <Button
                             variant="contained"
