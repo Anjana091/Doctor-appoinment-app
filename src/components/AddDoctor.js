@@ -3,12 +3,17 @@ import './AddDoctor.css'
 import Navbar from './Navbar';
 import { useNavigate } from "react-router-dom";
 import axios from 'axios';
+import { FormControl, FormLabel, RadioGroup, FormControlLabel, Radio } from '@mui/material';
+import { message } from 'antd';
+
+
 
 
 export default function AddDoctor() {
     const [doctor, setDoctor] = useState({
         doctorNo: "",
         fullname: "",
+        Gender: "",
         Specialty: "",
         Qualification: "",
         Experience: "",
@@ -34,7 +39,7 @@ export default function AddDoctor() {
             e.preventDefault();
             const res = await axios.post("http://localhost:3001/doctor/register",doctor);
             console.log(res);
-            alert(res.data.message);
+            message.success(res.data.message);
             navigate("/doctorlist")
         } catch (error) {
             console.log(error);
@@ -70,6 +75,22 @@ export default function AddDoctor() {
                             value={doctor.fullname}
                             onChange={(e) => handleChangeHandler(e)}
                         />
+                    </div>
+                    <div className="form-grp">
+                        <FormControl component="fieldset">
+                            <FormLabel component="legend">Gender</FormLabel>
+                            <RadioGroup
+                                row
+                                aria-label="Gender"
+                                name="Gender"
+                                value={doctor.Gender}
+                                onChange={handleChangeHandler}
+                            >
+                                <FormControlLabel value="female" control={<Radio />} label="Female" />
+                                <FormControlLabel value="male" control={<Radio />} label="Male" />
+                                <FormControlLabel value="other" control={<Radio />} label="Other" />
+                            </RadioGroup>
+                        </FormControl>
                     </div>
                     <div className="form-grp">
                         <label>Speciality:</label>

@@ -8,6 +8,7 @@ import DoctorsPage from "./components/DoctorsPage"
 import PatientsPage from "./components/PatientsPage";
 import AddDoctor from "./components/AddDoctor";
 import AddPatient from "./components/AddPatient";
+import Appoinments from "./components/appoinments";
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
           <Route path="/doctorlist" element={<DoctorsPage />} />
           <Route path="/doctorlist/add-doctor" element={<AddDoctor />} />
           <Route path="/patientlist/add-patient" element={<AddPatient />} />
+          <Route path="/doctorlist/appoinments/:doctorNo" element={<Appoinments />} />
         </Routes>
       </div>
     </Router>
